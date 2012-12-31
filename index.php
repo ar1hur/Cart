@@ -31,7 +31,7 @@
 		$cart->attach(new CartObserver);
 
 		$cart->add($product1);
-		$cart->add($product2, 2);
+		$cart->add($product2, 2); // adding 2 (quantity) of products2
 		$cart->add($product1);
 
 		echo "<pre>";

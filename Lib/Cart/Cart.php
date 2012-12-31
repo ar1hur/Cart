@@ -11,7 +11,10 @@
 		protected $session;
 		private function __clone() {}
 
-		
+
+		/**
+		 * Saves cart into session with its own namespace
+		 */
 		protected function __construct() 
 		{
 			$session = Session::getInstance();
@@ -20,6 +23,10 @@
 		}
 
 
+		/**
+		 * Singleton
+		 * @return Cart
+		 */
 		static public function getInstance() 
 		{
 			if( !self::$instance instanceof self ) {
@@ -29,7 +36,13 @@
 			return self::$instance;
 		}
 
-	
+
+		/**
+		 * Adds an item / product to the cart or increases quantity if item already exists
+		 * @param Product $product
+		 * @param integer $qty
+		 * @return Cart
+		 */
 		public function add(Product $product, $qty=1) 
 		{
 			if( isset($this->session->items[$product->getId()]) ) {
@@ -45,6 +58,11 @@
 		}
 
 
+		/**
+		 * Removes an item from cart by subtraction of its quantity
+		 * @param  string $productId
+		 * @return Cart
+		 */
 		public function remove($productId) 
 		{
 			if( isset($this->session->items[$productId]) ) {
@@ -62,6 +80,11 @@
 		}
 
 
+		/**
+		 * Deletes an item completely from cart
+		 * @param  string $productId
+		 * @return Cart
+		 */
 		public function delete($productId)
 		{
 			unset($this->session->items[$productId]);
@@ -69,12 +92,20 @@
 		}
 
 
+		/**
+		 * Get all items
+		 * @return array
+		 */
 		public function getItems()
 		{
 			return $this->session->items;
 		}
 
 
+		/**
+		 * Get total / amount
+		 * @return float
+		 */
 		public function getTotal()
 		{
 			$total = 0.00;
@@ -85,6 +116,10 @@
 		}
 
 
+		/**
+		 * Get quantity of whole cart
+		 * @return integer
+		 */
 		public function getQuantity()
 		{
 			$qty = 0;

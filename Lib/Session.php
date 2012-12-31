@@ -5,11 +5,14 @@
 	class Session
 	{
 		static private $instance;
-
 		private function __clone() {}
 		private function __construct() {}
 
-
+		/**
+		 * Singleton
+		 * Starts the session instantly
+		 * @return Session
+		 */
 		static public function getInstance() 
 		{
 			if( !self::$instance instanceof self ) {
@@ -22,6 +25,10 @@
 		}
 
 
+		/**
+		 * Starts the session
+		 * @return Session
+		 */
 		public function start()
 		{
 			if( !session_id() ) {
@@ -31,12 +38,21 @@
 			return $this;
 		}
 
-
+		/**
+		 * Checks if variable is in session 
+		 * @param string  $name
+		 * @return boolean
+		 */
 		public function __isset($name)
 		{
 			return isset($_SESSION[$name]);
 		}
 
+
+		/**
+		 * Removes a variable from session
+		 * @param string $name   
+		 */
 		public function __unset($name)
 		{
 			unset($_SESSION[$name]);
@@ -56,6 +72,10 @@
 		}
 
 
+		/**
+		 * Removes all session vars
+		 * @return Session
+		 */
 		public function destroy()
 		{
 			if( session_id() ) {
