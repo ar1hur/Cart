@@ -139,11 +139,11 @@
 		 */
 		public function getQuantity()
 		{
-			$qty = 0;
+			$quantity = 0;
 			foreach($this->session->items as $item) {
-				$qty +=  $item->getQuantity();
+				$quantity +=  $item->getQuantity();
 			}
-			return $qty;
+			return $quantity;
 		}
 
 
