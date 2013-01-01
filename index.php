@@ -6,11 +6,10 @@
 	use Lib\Cart\CartObserver;
 	use Lib\Session;	
 
-	require_once 'Autoloader.php';
-	\Autoloader::registerAutoload();
+	require_once 'bootstrap.php';
 
 	$session = Session::getInstance();	
-	#$session->test = "test";
+	$session->test = "test";
 ?>
 <!DOCTYPE html>
 <html lang="de">
