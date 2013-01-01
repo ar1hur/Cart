@@ -1,12 +1,10 @@
-<?php 
-	namespace Shop; 
+<?php
+    namespace Shop\Lib;
+	
+    use Shop\Lib\Cart\Cart;
+	use Shop\Lib\Cart\CartObserver;
 
-	use Lib\Product;
-	use Lib\Cart\Cart;
-	use Lib\Cart\CartObserver;
-	use Lib\Session;	
-
-	require_once 'bootstrap.php';
+    require_once 'bootstrap.php';
 
 	$session = Session::getInstance();	
 	$session->test = "test";

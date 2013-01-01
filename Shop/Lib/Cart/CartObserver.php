@@ -1,6 +1,6 @@
 <?php
 
-	namespace Lib\Cart;
+	namespace Shop\Lib\Cart;
 
 	class CartObserver implements \SplObserver
 	{

@@ -1,31 +1,31 @@
 <?php
 
-	namespace Lib\Cart;
+	namespace Shop\Lib\Cart;
 
-	use Lib\Product;
+	use Shop\Lib\Product;
 
 	class CartItem
 	{
 		protected $id;
-		protected $qty;
+		protected $quantity;
 		protected $product;
 
-		public function __construct(Product $product, $qty) 
+		public function __construct(Product $product, $quantity) 
 		{
 			$this->id = $product->getId();
 			$this->product = $product;
-			$this->qty = $qty;
+			$this->quantity = $quantity;
 		}
 
 
-		public function getQty() 
+		public function getQuantity() 
 		{
-			return $this->qty;
+			return $this->quantity;
 		}
 
-		public function setQty($qty) 
+		public function setQuantity($quantity) 
 		{
-			$this->qty = $qty;
+			$this->quantity = $quantity;
 			return $this;
 		}
 
