@@ -4,13 +4,13 @@
 
 	use Shop\Lib\Product;
 
-	class CartItem
+	class CartItem implements CartItemInterface
 	{
 		protected $id;
 		protected $quantity;
 		protected $product;
 
-		public function __construct(Product $product, $quantity) 
+		public function __construct(CartItemInterface $product, $quantity) 
 		{
 			$this->id = $product->getId();
 			$this->product = $product;

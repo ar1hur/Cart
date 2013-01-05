@@ -6,7 +6,18 @@
 	{
 		static private $instance;
 		private function __clone() {}
-		private function __construct() {}
+		
+		/**
+		 * Starts the session automatically
+		 */
+		protected function __construct() 
+		{
+			if( !session_id() ) {
+				session_start();
+			}
+
+			return $this;
+		}
 
 		/**
 		 * Singleton
@@ -19,24 +30,9 @@
 				self::$instance = new self;
 			}
 
-			self::$instance->start();
-
 			return self::$instance;
 		}
 
-
-		/**
-		 * Starts the session
-		 * @return Session
-		 */
-		public function start()
-		{
-			if( !session_id() ) {
-				session_start();
-			}
-
-			return $this;
-		}
 
 		/**
 		 * Checks if variable is in session 

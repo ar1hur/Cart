@@ -2,7 +2,9 @@
 
 	namespace Shop\Lib;
 
-	class Product
+	use Shop\Lib\Cart\CartItemInterface;
+
+	class Product implements CartItemInterface
 	{
 		protected $id;
 		protected $name;

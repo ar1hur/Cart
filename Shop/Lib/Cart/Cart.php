@@ -42,11 +42,11 @@
 
 		/**
 		 * Adds an item / product to the cart or increases quantity if item already exists
-		 * @param Product $product
-		 * @param integer $quantity
+		 * @param CartItemInterface 	$product
+		 * @param integer 				$quantity
 		 * @return Cart
 		 */
-		public function add(Product $product, $quantity=1) 
+		public function add(CartItemInterface $product, $quantity=1) 
 		{
 			if( isset($this->session->items[$product->getId()]) ) {
 				$quantity += $this->session->items[$product->getId()]->getQuantity();
