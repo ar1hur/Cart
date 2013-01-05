@@ -1,13 +1,15 @@
 <?php
-    namespace Shop\Lib;
+
+namespace Shop\Lib;
+
+use Shop\Lib\Cart\Cart;
+use Shop\Lib\Cart\CartObserver;
+
+require_once 'bootstrap.php';
+
+$session = Session::getInstance();	
+$session->test = "test";
 	
-    use Shop\Lib\Cart\Cart;
-	use Shop\Lib\Cart\CartObserver;
-
-    require_once 'bootstrap.php';
-
-	$session = Session::getInstance();	
-	$session->test = "test";
 ?>
 <!DOCTYPE html>
 <html lang="de">

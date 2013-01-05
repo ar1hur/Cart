@@ -21,5 +21,3 @@ $cart->getItem(1);
 $cart->getQuantity(); // 3
 $cart->getTotal(); // 1497.86
 ```
-
-

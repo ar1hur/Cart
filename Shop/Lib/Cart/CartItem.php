@@ -1,43 +1,43 @@
 <?php
 
-	namespace Shop\Lib\Cart;
+namespace Shop\Lib\Cart;
 
-	use Shop\Lib\Product;
+use Shop\Lib\Product;
 
-	class CartItem implements CartItemInterface
+class CartItem implements CartItemInterface
+{
+	protected $id;
+	protected $quantity;
+	protected $product;
+
+	public function __construct(CartItemInterface $product, $quantity) 
 	{
-		protected $id;
-		protected $quantity;
-		protected $product;
-
-		public function __construct(CartItemInterface $product, $quantity) 
-		{
-			$this->id = $product->getId();
-			$this->product = $product;
-			$this->quantity = $quantity;
-		}
-
-
-		public function getQuantity() 
-		{
-			return $this->quantity;
-		}
-
-		public function setQuantity($quantity) 
-		{
-			$this->quantity = $quantity;
-			return $this;
-		}
-
-
-		public function getProduct()
-		{
-			return $this->product;
-		}
-		
-
-		public function getId() 
-		{
-			return $this->id;
-		}
+		$this->id = $product->getId();
+		$this->product = $product;
+		$this->quantity = $quantity;
 	}
+
+
+	public function getQuantity() 
+	{
+		return $this->quantity;
+	}
+
+	public function setQuantity($quantity) 
+	{
+		$this->quantity = $quantity;
+		return $this;
+	}
+
+
+	public function getProduct()
+	{
+		return $this->product;
+	}
+	
+
+	public function getId() 
+	{
+		return $this->id;
+	}
+}
