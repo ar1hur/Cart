@@ -4,7 +4,7 @@ namespace Shop\Lib\Cart;
 
 use Shop\Lib\Product;
 
-class CartItem implements CartItemInterface
+class CartItem
 {
 	protected $id;
 	protected $quantity;
