@@ -41,7 +41,7 @@ class CartTest extends \PHPUnit_Framework_TestCase
 
 	/**
 	 * @depends testAddItems
-	 * It should removes a product by subtraction its quantity
+	 * It should remove a product by subtraction its quantity
 	 * @param  Cart $cart
 	 */
 	public function testRemoveItems($cart)
@@ -58,7 +58,7 @@ class CartTest extends \PHPUnit_Framework_TestCase
 
 	/**
 	 * @depends testAddItems
-	 * It should deletes a product completely from cart
+	 * It should delete a product completely from cart
 	 * @param  Cart $cart
 	 */
 	public function testDeleteItem($cart)
