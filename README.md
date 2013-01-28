@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ar1hur/Cart.png?branch=master)](https://travis-ci.org/ar1hur/Cart)
+
 Cart
 ====
 Playing around with my OOP implementation of a shopping cart with an observable interface...

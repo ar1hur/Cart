@@ -5,7 +5,7 @@ namespace Shop\Lib;
 use Shop\Lib\Cart\Cart;
 use Shop\Lib\Cart\CartObserver;
 
-require_once 'bootstrap.php';
+require 'bootstrap.php';
 
 $session = Session::getInstance();	
 $session->test = "test";
