@@ -2,6 +2,8 @@
 
 require_once 'bootstrap.php';
 
+use Shop\Lib\Cart\Cart;
+use Shop\Lib\Cart\CartObserver;
 ?>
 <!DOCTYPE html>
 <html lang="de">
