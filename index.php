@@ -16,9 +16,6 @@ $session->test = "test";
   <head>
     <meta charset="utf-8" />
     <title>Cart</title>
-    
-    <script src="js/socket.io.js"></script>
-    <script src="js/client.js"></script>
   </head>
   <body>
 	<?php
