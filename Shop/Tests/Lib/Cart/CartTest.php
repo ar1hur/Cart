@@ -33,7 +33,7 @@ class CartTest extends \PHPUnit_Framework_TestCase
 	 * @depends testAddItems
 	 * It should sum all prices
 	 */
-	public function testTotalOfPrices($cart)
+	public function testSumTotalOfPrices($cart)
 	{
 		$this->assertEquals(1797.76, $cart->getTotal());
 	}
