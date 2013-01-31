@@ -1,15 +1,9 @@
 <?php
 
-namespace Shop\Lib;
+require_once 'bootstrap.php';
 
 use Shop\Lib\Cart\Cart;
 use Shop\Lib\Cart\CartObserver;
-
-require 'bootstrap.php';
-
-$session = Session::getInstance();	
-$session->test = "test";
-	
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -22,7 +16,6 @@ $session->test = "test";
 		$product1 = new Product(1, 'xbox', 299.90);
 		$product2 = new Product(2, 'iphone', 598.98);
 
-		
 		$cart = Cart::getInstance();
 		$cart->attach(new CartObserver);
 
@@ -33,12 +26,6 @@ $session->test = "test";
 		echo "<pre>";
 		echo session_id()."<br/>";
 		print_r( $cart );
-		echo "<hr/>";
-		$session->someOtherValue = "test";
-		unset($session->test);
-		print_r($_SESSION);
-		$session->destroy();
 	?>
-
   </body>
 </html>
